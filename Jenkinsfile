@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'python'
+                    image 'python:3'
                 }
             }
             steps {
@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'python'
+                    image 'python:3'
                 }
             }
             steps {
