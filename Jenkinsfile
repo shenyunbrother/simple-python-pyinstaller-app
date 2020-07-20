@@ -14,11 +14,11 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'python:3'
+                    image 'qnib/pytest'
                 }
             }
             steps {
-                sh 'pytest --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
+                sh 'py.test --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
             }
             post {
                 always {
@@ -29,7 +29,7 @@ pipeline {
         stage('Deliver') { 
             agent {
                 docker {
-                    image 'cdrx/pyinstaller-linux::latest' 
+                    image 'cdrx/pyinstaller-linux:python3' 
                 }
             }
             steps {
