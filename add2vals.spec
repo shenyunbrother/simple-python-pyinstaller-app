@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['sources\\add2vals.py'],
-             pathex=['C:\\Users\\littl\\Documents\\GitHub\\simple-python-pyinstaller-app'],
+a = Analysis(['sources/add2vals.py'],
+             pathex=['/src'],
              binaries=[],
              datas=[],
              hiddenimports=[],
