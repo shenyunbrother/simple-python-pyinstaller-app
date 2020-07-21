@@ -34,7 +34,12 @@ pipeline {
                 }
             }
             steps {
-                sh 'pyinstaller --onefile sources/add2vals.py' 
+                sh '
+                echo $PATH
+                which pyinstaller
+                pyinstaller --onefile sources/add2vals.py
+
+                ' 
             }
             post {
                 success {
