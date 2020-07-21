@@ -30,7 +30,7 @@ pipeline {
             agent {
                 docker {
                     image 'cdrx/pyinstaller-linux:python3' 
-                    args  '-v /var/jenkins_home/workspace/simple-python-pyinstaller-app:/src/'
+                    args  '--entrypoint=""'
                 }
             }
             steps {
